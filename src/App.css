@@ -1,0 +1,216 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+#light {
+  background: var(--very-light-gray);
+}
+#dark {
+  background: var(--very-dark-blue);
+}
+.app-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.bg-mobile {
+  display: none;
+}
+.app-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+  z-index: 2;
+}
+.app-container-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app-container-top h1 {
+  color: white;
+  font-size: 35px;
+  letter-spacing: 10px;
+}
+.app-container-top img {
+  width: 5%;
+}
+.app-container-addtask {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--very-dark-grayish-blue2);
+}
+#light .app-container-addtask {
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+  background-color: var(--very-light-gray);
+}
+.app-container-addtask-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.app-container-addtask input {
+  background: transparent;
+  border: none;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--dark-grayish-blue);
+  font-size: 16px;
+  font-weight: 400;
+}
+.app-container-addtask input:focus {
+  outline: none;
+}
+.app-container-addtask span {
+  border: 1px solid var(--dark-grayish-blue);
+  border-radius: 50%;
+  padding: 10px;
+}
+.button-task button {
+  padding: 8px 15px;
+  color: var(--dark-grayish-blue);
+  background-color: transparent;
+  border: 1px solid var(--dark-grayish-blue);
+  font-family: "Josefin Sans", sans-serif;
+}
+.display-todo {
+  font-size: 20px;
+  color: var(--very-light-gray);
+  text-align: center;
+  padding-top: 2rem;
+  opacity: .8;
+}
+#light .display-todo {
+    color: var(--very-dark-desaturated-blue);
+    opacity: .8;
+  }
+.task-bg {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--very-dark-grayish-blue1);
+  background-color: var(--very-dark-grayish-blue2);
+}
+#light .task-bg {
+  border-bottom: 1px solid var(--light-grayish-blue);
+  background-color: var(--very-light-gray);
+}
+.task-text {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 16px;
+  color: var(--light-grayish-blue);
+}
+#light .task-text {
+  color: var(--very-dark-desaturated-blue);
+}
+.task-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--light-grayish-blue);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+#light .task-image {
+  border: 1px solid var(--dark-grayish-blue);
+}
+.done img {
+  position: absolute;
+  padding: 7px;
+  border-radius: 50%;
+  background: rgb(159, 82, 235);
+  background: radial-gradient(
+    circle,
+    rgba(159, 82, 235, 1) 38%,
+    rgba(70, 135, 252, 1) 100%
+  );
+}
+.task-bg .done .task-text {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+.task-bg-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  color: var(--dark-grayish-blue);
+  background-color: var(--very-dark-grayish-blue2);
+}
+#light .task-bg-bottom {
+  color: var(--very-dark-desaturated-blue);
+  background-color: var(--very-light-gray);
+  box-shadow: -1px 13px 11px -2px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: -1px 13px 11px -2px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: -1px 13px 11px -2px rgba(0, 0, 0, 0.38);
+}
+.task-bg-bottom button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--dark-grayish-blue);
+  cursor: pointer;
+  font-family: "Josefin Sans", sans-serif;
+}
+.task-bg-bottom-buttons {
+  display: flex;
+  gap: 12px;
+}
+.button-active {
+  color: rgb(71, 71, 240) !important;
+}
+@media screen and (max-width: 1024px) {
+  .bg-desktop {
+    display: none;
+  }
+  .bg-mobile {
+    display: block;
+  }
+  .app-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+    z-index: 2;
+  }
+}
+@media screen and (max-width: 768px) {
+  .app-container {
+    width: 90%;
+  }
+  .app-container-addtask {
+    margin-top: 2rem;
+  }
+  .task-bg-bottom-buttons {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    position: absolute;
+    transform: translate(-16px, 50px);
+    background-color: var(--very-dark-grayish-blue2);
+  }
+  #light .task-bg-bottom-buttons {
+    background-color: var(--very-light-gray);
+    box-shadow: -1px 13px 11px -2px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: -1px 13px 11px -2px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: -1px 13px 11px -2px rgba(0, 0, 0, 0.38);
+  }
+}
